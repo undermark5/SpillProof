@@ -1,0 +1,5 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.0.2
+Date: 2022-12-29
+  Bugfixes:
+    - Fixed crash caused by dying with inventory bonus

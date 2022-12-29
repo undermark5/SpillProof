@@ -81,3 +81,26 @@ function on_armor_changed(evt)
         end
     end
 end
+
+function on_player_respawn(evt)
+    local player = game.players[evt.player_index]
+    local armor_bonuses = global["armor_bonus"]
+    local old_armor_bonus = armor_bonuses[player.name]
+    local armor_stack = player.get_inventory(defines.inventory.character_armor)[1]
+    if player.character then
+        if armor_stack.is_armor then
+            local armor_ref_name = armor_stack.name .. "-ref"
+            local armor_ref_proto = game.item_prototypes[armor_ref_name]
+            local new_armor_bonus = 0
+            if armor_ref_proto then
+                new_armor_bonus = armor_ref_proto.inventory_size_bonus
+                armor_bonuses[player.name] = new_armor_bonus
+                on_inventory_grow(player, 0, new_armor_bonus)
+            else
+                armor_bonuses[palyer.name] = 0
+            end
+        else
+            armor_bonuses[player.name] = 0
+        end
+    end
+end

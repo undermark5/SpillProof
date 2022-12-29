@@ -1,0 +1,9 @@
+{
+    "factorio.versions": [
+        {
+            "name": "1.1.74",
+            "factorioPath": "/home/undermark5/factorio/bin/x64/factorio",
+            "active": true
+        }
+    ]
+}
