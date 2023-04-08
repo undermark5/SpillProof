@@ -5,5 +5,6 @@
             "factorioPath": "/home/undermark5/factorio/bin/x64/factorio",
             "active": true
         }
-    ]
+    ],
+    "cmake.configureOnOpen": false
 }

@@ -104,3 +104,11 @@ function on_player_respawn(evt)
         end
     end
 end
+
+function on_load()
+    if script.active_mods['space-exploration'] then
+        if (remote.call("space-exploration", "get_on_player_respawned_event")) then
+            script.on_event(remote.call("space-exploration", "get_on_player_respawned_event"), on_player_respawn)
+        end
+    end
+end
